@@ -1,0 +1,172 @@
+﻿$font-family: Helvectica, sans-seriff;
+$info-button-color: #008CBA;
+$highlight-color: #FF0000;
+
+@mixin pad-vert($pixel) {
+    padding-top: $pixel;
+    padding-bottom: $pixel;
+}
+
+@mixin pad-sides($pixel) {
+    padding-left: $pixel;
+    padding-right: $pixel;
+}
+
+@mixin padding($vert, $sides) {
+    padding: $vert $sides;
+}
+
+@mixin marg-bottom($pixel){
+    margin-bottom: $pixel;
+}
+
+@mixin marg-sides($pixel) {
+    margin-right: 11px;
+    margin-left: 11px;
+}
+
+@mixin text-align($align) {
+    text-align: $align;
+}
+
+@mixin display($value){
+    display: $value;
+}
+
+@mixin background-color($bgcolor){
+    background-color: $bgcolor;
+}
+
+@mixin border($font-color, $pixel) {
+    border: 1px solid $font-color;
+    border-radius: $pixel;
+}
+
+body {
+    font-family: $font-family;
+}
+
+.hide {
+    @include display(none);
+}
+
+.show {
+    @include display(block);
+}
+
+.border {
+    @include border(#e7e7e7, 3px);
+}
+
+.panel {
+    @extend .border;
+
+    h1 {
+        margin: 0;
+        @include pad-vert(11px);
+        @include text-align(center);
+    }
+}
+
+.panel-header {
+    @include background-color(#f8f8f8);
+}
+
+.panel-body {
+    @include padding(22px, 22px);
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 77px;
+    @include padding(11px, 22px);
+    @include text-align(center);
+    @include display(inline-block);
+    /*@include marg-sides(11px);*/
+}
+
+.info-button {
+    @extend .button;
+    @include background-color($info-button-color);
+    @include border($info-button-color, 3px);
+}
+
+#dvSelectContainer, #dvButtonContainer {
+    @include text-align(center);
+}
+
+#dvProgressContainer {
+    @include pad-sides(15%);
+}
+
+#dvSelectContainer select {
+    height: 38px;
+    width: 200px;
+    border-radius: 3px;
+    cursor: pointer;
+    @include marg-bottom(22px);
+}
+
+progress {
+    height: 2.5em;
+    width: 100%;
+    -webkit-appearance: none;
+    border: none;
+    position: relative;
+    @include marg-bottom(22px);
+    @include text-align(center);
+}
+
+progress:before {
+    content: attr(data-label);
+    font-size: 0.8em;
+    vertical-align: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14px;
+}
+
+progress::-webkit-progress-bar {
+    @include background-color(#c9c9c9);
+}
+
+progress::-webkit-progress-value {
+    @include background-color(#7cc4ff);
+}
+
+progress::-moz-progress-bar {
+    @include background-color(#7cc4ff);
+}
+
+progress.highlight-color {
+    @include background-color($highlight-color);
+}
+
+progress.highlight-color::-webkit-progress-value {
+    @include background-color($highlight-color);
+}
+
+progress.highlight-color::-moz-progress-bar {
+    @include background-color($highlight-color);
+}
+
+
+@media only screen and (max-width: 600px){
+    .info-button {
+        width: 70%;
+        @include marg-bottom(22px);
+    }
+    #dvProgressContainer {
+        @include pad-sides(5%);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .info-button {
+        @include marg-sides(11px);
+    }
+}

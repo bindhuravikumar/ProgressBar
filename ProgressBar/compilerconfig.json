@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "styles/ProgressBars.css",
+    "inputFile": "styles/ProgressBars.scss"
+  },
+  {
+    "outputFile": "scripts/ProgressBar.es5.js",
+    "inputFile": "scripts/ProgressBar.js"
+  }
+]
