@@ -70,8 +70,7 @@ progress:before {
   position: absolute;
   left: 0;
   right: 0;
-  top: 14px;
-color: green;}
+  top: 14px;}
 
 progress::-webkit-progress-bar {
   background-color: #c9c9c9; }
