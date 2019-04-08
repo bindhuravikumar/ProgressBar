@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var api_URL = "http://pb-api.herokuapp.com/bars";
+var api_URL = "https://pb-api.herokuapp.com/bars";
 
 function getInputValues() {
     "use strict";
