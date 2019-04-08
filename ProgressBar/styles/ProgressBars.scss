@@ -85,6 +85,7 @@ body {
     @include padding(11px, 22px);
     @include text-align(center);
     @include display(inline-block);
+    -webkit-appearance: none;
     /*@include marg-sides(11px);*/
 }
 
