@@ -1,4 +1,4 @@
-﻿const api_URL = "http://pb-api.herokuapp.com/bars";
+﻿const api_URL = "https://pb-api.herokuapp.com/bars";
 
 function getInputValues() {
     "use strict";
